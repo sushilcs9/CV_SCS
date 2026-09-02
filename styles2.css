@@ -115,9 +115,9 @@ a:hover { opacity: 0.7; }
 .nav-links {
   display: flex;
   list-style: none;
-  gap: clamp(0.6rem, 2vw, 1.2rem);
+  gap: clamp(0.5rem, 1.5vw, 0.85rem);
   margin-left: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -125,7 +125,8 @@ a:hover { opacity: 0.7; }
   font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
   color: rgba(255,255,255,0.55);
   text-decoration: none;
   transition: color 0.2s;
@@ -606,6 +607,19 @@ a:hover { opacity: 0.7; }
   color: var(--ink-2);
 }
 
+/* Working Papers — reuses publication list styling, recolored to blue */
+#working-papers .pub-num {
+  background: linear-gradient(135deg, var(--blue-lt), var(--blue-md));
+  color: var(--blue);
+}
+
+#working-papers .thesis-block {
+  background: linear-gradient(135deg, var(--blue-lt), var(--purple-lt));
+  border-color: var(--blue-md);
+}
+
+#working-papers .thesis-label { color: var(--blue); }
+
 .thesis-label {
   font-family: var(--font-head);
   font-size: 0.68rem;
@@ -840,13 +854,7 @@ a:hover { opacity: 0.7; }
   }
 }
 
-@media (max-width: 640px) {
-  .tl-item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .tl-badge { display: inline-block; margin-bottom: 0; }
-
+@media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
@@ -859,6 +867,15 @@ a:hover { opacity: 0.7; }
     gap: 0.85rem;
   }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .tl-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .tl-badge { display: inline-block; margin-bottom: 0; }
+
   .awards-grid { grid-template-columns: 1fr 1fr; }
 }
 
