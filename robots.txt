@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sushilcs9.github.io/CV_SCS/sitemap.xml
